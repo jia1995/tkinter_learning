@@ -5,8 +5,6 @@
 '''
 import tkinter as tk
 
-from click import command
-
 class MenuBar(tk.Frame):
     def __init__(self, master=None):
         tk.Frame.__init__(self, master)
@@ -27,6 +25,9 @@ class MenuBar(tk.Frame):
         self.menuBar.add_cascade(label='帮助', menu=self.hBar)
         self.__fileBar()
         self.__editBar()
+
+    def __select(self):
+        self.s2Bar.add_command(label='全选', command=self.__selectAll)
     
     def __fileBar(self):
         self.fBar.add_command(label='新建文件',command=self.__newFile)
@@ -46,6 +47,9 @@ class MenuBar(tk.Frame):
         self.eBar.add_command(label='恢复', command=self.__recover)
     
     def __cut(self):
+        ...
+
+    def __selectAll(self):
         ...
     
     def __copy(self):
